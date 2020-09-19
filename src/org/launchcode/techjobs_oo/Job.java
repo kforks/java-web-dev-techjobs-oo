@@ -41,11 +41,15 @@ public class Job {
         return
             "\nID: " + getId() +
             "\nName: " + (getName() == null || getName() == "" ? "Data not available" : getName()) +
-            "\nEmployer: " + (getEmployer().getValue() == null || getEmployer().getValue() == ""? "Data not available" : getEmployer().getValue()) +
-            "\nLocation: " + (getLocation().getValue() == null || getLocation().getValue() == "" ? "Data not available" : getLocation().getValue()) +
-            "\nPosition Type: " + (getPositionType().getValue() == null || getPositionType().getValue() == "" ? "Data not available" : getPositionType().getValue()) +
-            "\nCore Competency: " + (getCoreCompetency().getValue() == null || getCoreCompetency().getValue() == "" ? "Data not available" : getCoreCompetency().getValue()) + "\n";
+            printJobField(getEmployer(),"Employer") +
+            printJobField(getLocation(),"Location") +
+            printJobField(getPositionType(),"Position Type") +
+            printJobField(getCoreCompetency(),"Core Competency")+"\n";
 
+    }
+
+    private String printJobField(JobField field, String type) {
+        return "\n"+type+": " + (field.getValue() == null || field.getValue() == ""? "Data not available" : field.getValue());
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
