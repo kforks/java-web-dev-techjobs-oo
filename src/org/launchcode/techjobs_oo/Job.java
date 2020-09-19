@@ -40,11 +40,11 @@ public class Job {
 
         return
             "\nID: " + getId() +
-            "\nName: " + (getName() == null ? "Data not available" : getName()) +
-            "\nEmployer: " + (getEmployer().getValue() == null ? "Data not available" : getEmployer().getValue()) +
-            "\nLocation: " + (getLocation().getValue() == null ? "Data not available" : getLocation().getValue()) +
-            "\nPosition Type: " + (getPositionType().getValue() == null ? "Data not available" : getPositionType().getValue()) +
-            "\nCore Competency: " + (getCoreCompetency().getValue() == null ? "Data not available" : getCoreCompetency().getValue()) + "\n";
+            "\nName: " + (getName() == null || getName() == "" ? "Data not available" : getName()) +
+            "\nEmployer: " + (getEmployer().getValue() == null || getEmployer().getValue() == ""? "Data not available" : getEmployer().getValue()) +
+            "\nLocation: " + (getLocation().getValue() == null || getLocation().getValue() == "" ? "Data not available" : getLocation().getValue()) +
+            "\nPosition Type: " + (getPositionType().getValue() == null || getPositionType().getValue() == "" ? "Data not available" : getPositionType().getValue()) +
+            "\nCore Competency: " + (getCoreCompetency().getValue() == null || getCoreCompetency().getValue() == "" ? "Data not available" : getCoreCompetency().getValue()) + "\n";
 
     }
 
